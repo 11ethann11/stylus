@@ -1,0 +1,521 @@
+:root {
+        --bg: #111214;
+        --bg-secondary: #17181c;
+        --bg-tertiary: #1e1f22;
+        --card: #1e1f22;
+        --card-hover: #24262b;
+
+        --border: #2b2d31;
+        --border-light: #35373c;
+
+        --text: #f2f3f5;
+        --text-secondary: #b5bac1;
+        --text-muted: #80848e;
+
+        --discord: #5865f2;
+        --green: #23a55a;
+        --yellow: #f0b232;
+        --red: #f23f43;
+    }
+
+
+    /* ========================================
+       PAGE
+       ======================================== */
+
+    html,
+    body {
+        background: var(--bg) !important;
+        color: var(--text) !important;
+    }
+
+    body,
+    button,
+    input,
+    select,
+    textarea {
+        color: var(--text) !important;
+    }
+
+    a {
+        color: #949cf7 !important;
+    }
+
+    a:hover {
+        color: #b5baf8 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong {
+        color: var(--text) !important;
+    }
+
+    hr {
+        border-color: var(--border) !important;
+    }
+
+
+/* ========================================
+   BANDEAU DISCORD EN HAUT — FIX EXACT
+   ======================================== */
+
+/* Le vrai gros bandeau */
+.layout-content.status.status-index .masthead-container,
+.layout-content.status.status-index .masthead-container.basic,
+.masthead-container,
+.masthead-container.basic {
+    background: #1e1f22 !important;
+    background-color: #1e1f22 !important;
+    background-image: none !important;
+}
+
+/* Contenu du bandeau */
+.layout-content.status.status-index .masthead,
+.layout-content.status.status-index .masthead.has-logo,
+.masthead,
+.masthead.has-logo {
+    background: #1e1f22 !important;
+    background-color: #1e1f22 !important;
+    background-image: none !important;
+}
+
+/* Zone du logo */
+.masthead .logo-container,
+.masthead.has-logo .logo-container {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* On garde l'image Discord telle quelle */
+.masthead .logo-container img {
+    background: transparent !important;
+}
+
+    /*
+       Statuspage peut mettre la couleur directement
+       dans style=""
+    */
+
+    .page-header [style*="background"],
+    #page-header [style*="background"],
+    header [style*="background"] {
+        background-color: var(--bg-tertiary) !important;
+        background-image: none !important;
+    }
+
+    .page-header [style*="background-color"],
+    #page-header [style*="background-color"],
+    header [style*="background-color"] {
+        background-color: var(--bg-tertiary) !important;
+    }
+
+    /*
+       Autres classes utilisées selon la version
+       de Statuspage
+    */
+
+    .branding,
+    .logo-container,
+    .header-logo-container,
+    .page-status,
+    .page-status-container {
+        background-color: var(--bg-tertiary) !important;
+    }
+
+
+    /* ========================================
+       CONTENU
+       ======================================== */
+
+    .layout-content,
+    .container,
+    .page-footer {
+        background-color: transparent !important;
+    }
+
+
+    /* ========================================
+       CARTES / COMPOSANTS
+       ======================================== */
+
+    .components-section,
+    .component-container,
+    .component-inner-container,
+    .incident-container,
+    .scheduled-maintenance-container {
+        background: var(--card) !important;
+        border-color: var(--border) !important;
+        color: var(--text) !important;
+    }
+
+    .components-section {
+        border-radius: 12px !important;
+        overflow: hidden !important;
+
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.02),
+            0 8px 30px rgba(0, 0, 0, 0.18) !important;
+    }
+
+    .component-container {
+        transition:
+            background 0.15s ease,
+            border-color 0.15s ease !important;
+    }
+
+    .component-container:hover {
+        background: var(--card-hover) !important;
+    }
+
+    .component-name,
+    .name,
+    .component-status {
+        color: var(--text) !important;
+    }
+
+    .component-inner-container {
+        border-color: var(--border) !important;
+    }
+
+    .component-inner-container + .component-inner-container {
+        border-top-color: var(--border) !important;
+    }
+
+
+    /* ========================================
+       TEXTES SECONDAIRES
+       ======================================== */
+
+    .secondary,
+    .small,
+    .date,
+    .incident-time,
+    .footer,
+    .page-footer {
+        color: var(--text-secondary) !important;
+    }
+
+
+    /* ========================================
+       ÉTATS
+       ======================================== */
+
+    .status-green,
+    .operational {
+        color: var(--green) !important;
+    }
+
+    .status-yellow,
+    .degraded-performance {
+        color: var(--yellow) !important;
+    }
+
+    .status-red,
+    .major-outage,
+    .partial-outage {
+        color: var(--red) !important;
+    }
+
+
+    /* ========================================
+       UPTIME
+       ======================================== */
+
+    .uptime-bar {
+        opacity: 0.9 !important;
+    }
+
+    .uptime-bar:hover {
+        opacity: 1 !important;
+    }
+
+    .uptime-bar-status-green {
+        background-color: var(--green) !important;
+    }
+
+    .uptime-bar-status-yellow {
+        background-color: var(--yellow) !important;
+    }
+
+    .uptime-bar-status-red {
+        background-color: var(--red) !important;
+    }
+
+
+    /* ========================================
+       INCIDENTS
+       ======================================== */
+
+    .incident-container {
+        border-radius: 10px !important;
+        padding: 16px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .incident-title,
+    .incident-name {
+        color: var(--text) !important;
+    }
+
+    .incident-body,
+    .incident-update {
+        color: var(--text-secondary) !important;
+    }
+
+    .past-incidents {
+        color: var(--text) !important;
+    }
+
+    .past-incidents .incident-container {
+        background: var(--bg-secondary) !important;
+        border: 1px solid var(--border) !important;
+    }
+
+
+    /* ========================================
+       GRAPHIQUES
+       IMPORTANT :
+       on ne touche PAS aux paths de la courbe
+       ======================================== */
+
+    .metrics-container,
+    .metric-container,
+    .metric,
+    .metrics,
+    .chart-container,
+    .chart,
+    .graph,
+    .graph-container {
+        background-color: var(--card) !important;
+        color: var(--text-secondary) !important;
+        border-color: var(--border) !important;
+    }
+
+    .metric-container > div,
+    .metrics-container > div,
+    .chart-container > div {
+        background-color: var(--card) !important;
+    }
+
+
+    /* HIGHCHARTS */
+
+    .highcharts-container {
+        background: var(--card) !important;
+    }
+
+    .highcharts-root {
+        background: var(--card) !important;
+    }
+
+    .highcharts-background,
+    .highcharts-plot-background {
+        fill: var(--card) !important;
+    }
+
+
+    /* Grille */
+
+    .highcharts-grid-line {
+        stroke: #35373c !important;
+    }
+
+
+    /* Axes */
+
+    .highcharts-axis-line,
+    .highcharts-tick {
+        stroke: #404249 !important;
+    }
+
+
+    /* Valeurs 0 / 250 / 500 / 750 + heures */
+
+    .highcharts-axis-labels text,
+    .highcharts-xaxis-labels text,
+    .highcharts-yaxis-labels text {
+        fill: #949ba4 !important;
+        color: #949ba4 !important;
+    }
+
+
+    /* Titres */
+
+    .highcharts-title,
+    .highcharts-subtitle {
+        fill: var(--text-secondary) !important;
+        color: var(--text-secondary) !important;
+    }
+
+
+    /*
+       NE PAS AJOUTER :
+
+       .highcharts-series path
+       .highcharts-graph
+       .highcharts-point
+
+       Sinon ça modifie l'épaisseur / le rendu
+       de la courbe originale.
+    */
+
+
+    /* ========================================
+       TOOLTIP GRAPHIQUE
+       ======================================== */
+
+    .highcharts-tooltip-box {
+        fill: #111214 !important;
+        stroke: #404249 !important;
+    }
+
+    .highcharts-tooltip text {
+        fill: var(--text) !important;
+    }
+
+
+    /* ========================================
+       BOUTONS
+       ======================================== */
+
+    button,
+    .button,
+    .btn {
+        background: var(--bg-tertiary) !important;
+        color: var(--text) !important;
+
+        border-color: var(--border-light) !important;
+        border-radius: 7px !important;
+    }
+
+    button:hover,
+    .button:hover,
+    .btn:hover {
+        background: #2b2d31 !important;
+        border-color: #404249 !important;
+    }
+
+    .button-primary,
+    .btn-primary {
+        background: var(--discord) !important;
+        border-color: var(--discord) !important;
+        color: #fff !important;
+    }
+
+
+    /* ========================================
+       INPUTS
+       ======================================== */
+
+    input,
+    textarea,
+    select {
+        background: #111214 !important;
+
+        border: 1px solid var(--border-light) !important;
+        border-radius: 6px !important;
+
+        color: var(--text) !important;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        border-color: var(--discord) !important;
+        outline: none !important;
+
+        box-shadow:
+            0 0 0 2px rgba(88, 101, 242, 0.2) !important;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: var(--text-muted) !important;
+    }
+
+
+    /* ========================================
+       MODALES
+       ======================================== */
+
+    .modal,
+    .modal-content,
+    .modal-container,
+    [role="dialog"] {
+        background: var(--bg-tertiary) !important;
+        color: var(--text) !important;
+        border-color: var(--border) !important;
+    }
+
+    .modal-backdrop {
+        background: rgba(0, 0, 0, 0.75) !important;
+    }
+
+
+    /* ========================================
+       TOOLTIPS
+       ======================================== */
+
+    .tooltip,
+    [role="tooltip"] {
+        background: #111214 !important;
+        color: var(--text) !important;
+
+        border: 1px solid var(--border) !important;
+
+        box-shadow:
+            0 5px 15px rgba(0, 0, 0, 0.4) !important;
+    }
+
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+
+    footer,
+    .footer,
+    .page-footer {
+        background-color: var(--bg) !important;
+        color: var(--text-secondary) !important;
+        border-color: var(--border) !important;
+    }
+
+
+    /* ========================================
+       SCROLLBAR
+       ======================================== */
+
+    ::-webkit-scrollbar {
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--bg) !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #35373c !important;
+
+        border: 2px solid var(--bg) !important;
+        border-radius: 10px !important;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #4e5058 !important;
+    }
+
+
+    /* ========================================
+       SÉLECTION
+       ======================================== */
+
+    ::selection {
+        background: rgba(88, 101, 242, 0.45) !important;
+        color: #fff !important;
+    }
