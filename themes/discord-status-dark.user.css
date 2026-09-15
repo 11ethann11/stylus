@@ -1,3 +1,19 @@
+/* ==UserStyle==
+@name           Discord Status — Dark
+@namespace      11ethann11-stylus
+@version        1.0.0
+@description    Dark theme for discordstatus.com
+@author         11ethann11
+
+@homepageURL    https://github.com/11ethann11/stylus
+@supportURL     https://github.com/11ethann11/stylus/issues
+
+@updateURL      https://raw.githubusercontent.com/11ethann11/stylus/main/themes/discord-status-dark.user.css
+@downloadURL    https://raw.githubusercontent.com/11ethann11/stylus/main/themes/discord-status-dark.user.css
+==/UserStyle== */
+
+@-moz-document domain("discordstatus.com") {
+
 :root {
         --bg: #111214;
         --bg-secondary: #17181c;
@@ -17,11 +33,6 @@
         --yellow: #f0b232;
         --red: #f23f43;
     }
-
-
-    /* ========================================
-       PAGE
-       ======================================== */
 
     html,
     body {
@@ -59,12 +70,6 @@
         border-color: var(--border) !important;
     }
 
-
-/* ========================================
-   BANDEAU DISCORD EN HAUT — FIX EXACT
-   ======================================== */
-
-/* Le vrai gros bandeau */
 .layout-content.status.status-index .masthead-container,
 .layout-content.status.status-index .masthead-container.basic,
 .masthead-container,
@@ -74,7 +79,6 @@
     background-image: none !important;
 }
 
-/* Contenu du bandeau */
 .layout-content.status.status-index .masthead,
 .layout-content.status.status-index .masthead.has-logo,
 .masthead,
@@ -84,22 +88,15 @@
     background-image: none !important;
 }
 
-/* Zone du logo */
 .masthead .logo-container,
 .masthead.has-logo .logo-container {
     background: transparent !important;
     background-color: transparent !important;
 }
 
-/* On garde l'image Discord telle quelle */
 .masthead .logo-container img {
     background: transparent !important;
 }
-
-    /*
-       Statuspage peut mettre la couleur directement
-       dans style=""
-    */
 
     .page-header [style*="background"],
     #page-header [style*="background"],
@@ -114,11 +111,6 @@
         background-color: var(--bg-tertiary) !important;
     }
 
-    /*
-       Autres classes utilisées selon la version
-       de Statuspage
-    */
-
     .branding,
     .logo-container,
     .header-logo-container,
@@ -127,21 +119,11 @@
         background-color: var(--bg-tertiary) !important;
     }
 
-
-    /* ========================================
-       CONTENU
-       ======================================== */
-
     .layout-content,
     .container,
     .page-footer {
         background-color: transparent !important;
     }
-
-
-    /* ========================================
-       CARTES / COMPOSANTS
-       ======================================== */
 
     .components-section,
     .component-container,
@@ -186,11 +168,6 @@
         border-top-color: var(--border) !important;
     }
 
-
-    /* ========================================
-       TEXTES SECONDAIRES
-       ======================================== */
-
     .secondary,
     .small,
     .date,
@@ -199,11 +176,6 @@
     .page-footer {
         color: var(--text-secondary) !important;
     }
-
-
-    /* ========================================
-       ÉTATS
-       ======================================== */
 
     .status-green,
     .operational {
@@ -220,11 +192,6 @@
     .partial-outage {
         color: var(--red) !important;
     }
-
-
-    /* ========================================
-       UPTIME
-       ======================================== */
 
     .uptime-bar {
         opacity: 0.9 !important;
@@ -245,11 +212,6 @@
     .uptime-bar-status-red {
         background-color: var(--red) !important;
     }
-
-
-    /* ========================================
-       INCIDENTS
-       ======================================== */
 
     .incident-container {
         border-radius: 10px !important;
@@ -276,13 +238,6 @@
         border: 1px solid var(--border) !important;
     }
 
-
-    /* ========================================
-       GRAPHIQUES
-       IMPORTANT :
-       on ne touche PAS aux paths de la courbe
-       ======================================== */
-
     .metrics-container,
     .metric-container,
     .metric,
@@ -302,9 +257,6 @@
         background-color: var(--card) !important;
     }
 
-
-    /* HIGHCHARTS */
-
     .highcharts-container {
         background: var(--card) !important;
     }
@@ -318,23 +270,14 @@
         fill: var(--card) !important;
     }
 
-
-    /* Grille */
-
     .highcharts-grid-line {
         stroke: #35373c !important;
     }
-
-
-    /* Axes */
 
     .highcharts-axis-line,
     .highcharts-tick {
         stroke: #404249 !important;
     }
-
-
-    /* Valeurs 0 / 250 / 500 / 750 + heures */
 
     .highcharts-axis-labels text,
     .highcharts-xaxis-labels text,
@@ -343,31 +286,11 @@
         color: #949ba4 !important;
     }
 
-
-    /* Titres */
-
     .highcharts-title,
     .highcharts-subtitle {
         fill: var(--text-secondary) !important;
         color: var(--text-secondary) !important;
     }
-
-
-    /*
-       NE PAS AJOUTER :
-
-       .highcharts-series path
-       .highcharts-graph
-       .highcharts-point
-
-       Sinon ça modifie l'épaisseur / le rendu
-       de la courbe originale.
-    */
-
-
-    /* ========================================
-       TOOLTIP GRAPHIQUE
-       ======================================== */
 
     .highcharts-tooltip-box {
         fill: #111214 !important;
@@ -377,11 +300,6 @@
     .highcharts-tooltip text {
         fill: var(--text) !important;
     }
-
-
-    /* ========================================
-       BOUTONS
-       ======================================== */
 
     button,
     .button,
@@ -406,11 +324,6 @@
         border-color: var(--discord) !important;
         color: #fff !important;
     }
-
-
-    /* ========================================
-       INPUTS
-       ======================================== */
 
     input,
     textarea,
@@ -438,11 +351,6 @@
         color: var(--text-muted) !important;
     }
 
-
-    /* ========================================
-       MODALES
-       ======================================== */
-
     .modal,
     .modal-content,
     .modal-container,
@@ -456,11 +364,6 @@
         background: rgba(0, 0, 0, 0.75) !important;
     }
 
-
-    /* ========================================
-       TOOLTIPS
-       ======================================== */
-
     .tooltip,
     [role="tooltip"] {
         background: #111214 !important;
@@ -472,11 +375,6 @@
             0 5px 15px rgba(0, 0, 0, 0.4) !important;
     }
 
-
-    /* ========================================
-       FOOTER
-       ======================================== */
-
     footer,
     .footer,
     .page-footer {
@@ -484,11 +382,6 @@
         color: var(--text-secondary) !important;
         border-color: var(--border) !important;
     }
-
-
-    /* ========================================
-       SCROLLBAR
-       ======================================== */
 
     ::-webkit-scrollbar {
         width: 10px !important;
@@ -510,12 +403,9 @@
         background: #4e5058 !important;
     }
 
-
-    /* ========================================
-       SÉLECTION
-       ======================================== */
-
     ::selection {
         background: rgba(88, 101, 242, 0.45) !important;
         color: #fff !important;
     }
+
+}
