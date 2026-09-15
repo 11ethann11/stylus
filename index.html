@@ -81,7 +81,7 @@
             background: rgba(13, 14, 16, 0.82);
             backdrop-filter: blur(18px);
 
-            border-bottom: 1px solid rgba(255,255,255,.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .nav {
@@ -124,7 +124,7 @@
             color: var(--text-2);
             font-size: 14px;
 
-            transition: .2s;
+            transition: 0.2s;
         }
 
         .github:hover {
@@ -156,7 +156,7 @@
             border: 1px solid var(--border);
             border-radius: 999px;
 
-            background: rgba(255,255,255,.025);
+            background: rgba(255, 255, 255, 0.025);
 
             color: var(--text-2);
             font-size: 13px;
@@ -169,7 +169,7 @@
             background: var(--green);
             border-radius: 50%;
 
-            box-shadow: 0 0 10px rgba(35,165,90,.6);
+            box-shadow: 0 0 10px rgba(35, 165, 90, 0.6);
         }
 
         h1 {
@@ -189,6 +189,7 @@
 
             -webkit-background-clip: text;
             background-clip: text;
+
             color: transparent;
         }
 
@@ -197,6 +198,7 @@
             margin: auto;
 
             color: var(--text-2);
+
             font-size: 17px;
             line-height: 1.7;
         }
@@ -208,6 +210,7 @@
 
         main {
             max-width: 1150px;
+
             margin: auto;
             padding: 0 24px 100px;
         }
@@ -250,7 +253,7 @@
 
             outline: none;
 
-            transition: .2s;
+            transition: 0.2s;
         }
 
         .search::placeholder {
@@ -261,12 +264,12 @@
             border-color: var(--accent);
 
             box-shadow:
-                0 0 0 3px rgba(88,101,242,.12);
+                0 0 0 3px rgba(88, 101, 242, 0.12);
         }
 
 
         /* =========================
-           GRID
+           THEMES
            ========================= */
 
         .themes {
@@ -277,11 +280,6 @@
 
             gap: 18px;
         }
-
-
-        /* =========================
-           CARD
-           ========================= */
 
         .theme {
             position: relative;
@@ -295,7 +293,7 @@
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,.025),
+                    rgba(255, 255, 255, 0.025),
                     transparent
                 ),
                 var(--card);
@@ -303,10 +301,13 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
 
+            scroll-margin-top: 110px;
+
             transition:
-                transform .2s,
-                border-color .2s,
-                background .2s;
+                transform 0.2s,
+                border-color 0.2s,
+                background 0.2s,
+                box-shadow 0.2s;
         }
 
         .theme:hover {
@@ -317,11 +318,29 @@
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,.04),
+                    rgba(255, 255, 255, 0.04),
                     transparent
                 ),
                 var(--card-hover);
         }
+
+
+        /* Thème ouvert via #discordstatus etc. */
+
+        .theme:target {
+            transform: translateY(-3px);
+
+            border-color: var(--accent);
+
+            box-shadow:
+                0 0 0 1px rgba(88, 101, 242, 0.35),
+                0 0 35px rgba(88, 101, 242, 0.15);
+        }
+
+
+        /* =========================
+           CARD
+           ========================= */
 
         .theme-top {
             display: flex;
@@ -352,10 +371,11 @@
         .version {
             padding: 6px 9px;
 
-            background: rgba(88,101,242,.12);
+            background: rgba(88, 101, 242, 0.12);
+
             color: #aeb4ff;
 
-            border: 1px solid rgba(88,101,242,.22);
+            border: 1px solid rgba(88, 101, 242, 0.22);
             border-radius: 7px;
 
             font-size: 12px;
@@ -364,7 +384,6 @@
 
         .theme h3 {
             margin-bottom: 8px;
-
             font-size: 19px;
         }
 
@@ -432,7 +451,7 @@
             font-size: 13px;
             font-weight: 600;
 
-            transition: .2s;
+            transition: 0.2s;
         }
 
         .install {
@@ -459,7 +478,7 @@
 
 
         /* =========================
-           EMPTY SEARCH
+           EMPTY
            ========================= */
 
         .empty {
@@ -486,6 +505,7 @@
             border-top: 1px solid var(--border);
 
             color: var(--text-3);
+
             text-align: center;
             font-size: 13px;
         }
@@ -502,9 +522,7 @@
             }
 
             .hero {
-                padding:
-                    80px 18px
-                    60px;
+                padding: 80px 18px 60px;
             }
 
             h1 {
@@ -512,9 +530,7 @@
             }
 
             main {
-                padding:
-                    0 17px
-                    70px;
+                padding: 0 17px 70px;
             }
 
             .toolbar {
@@ -535,43 +551,62 @@
 
 <body>
 
+
 <header>
+
     <div class="nav">
 
-        <a href="#" class="brand">
-            <div class="brand-icon">S</div>
-            <span>Stylus Themes</span>
+        <a
+            href="https://11ethann11.github.io/stylus/"
+            class="brand"
+        >
+            <div class="brand-icon">
+                S
+            </div>
+
+            <span>
+                Stylus Themes
+            </span>
         </a>
 
-        <!-- CHANGE TON LIEN GITHUB -->
+
         <a
             class="github"
-            href="https://github.com/TON-USER"
+            href="https://github.com/11ethann11/stylus"
             target="_blank"
+            rel="noopener"
         >
             GitHub ↗
         </a>
 
     </div>
+
 </header>
 
 
 <section class="hero">
 
     <div class="badge">
+
         <span class="badge-dot"></span>
+
         UserStyles pour Stylus
+
     </div>
+
 
     <h1>
         Mes
-        <span class="gradient">Stylus Themes</span>
+        <span class="gradient">
+            Stylus Themes
+        </span>
     </h1>
+
 
     <p>
         Une collection de thèmes et modifications CSS
-        pour personnaliser mes sites préférés.
-        Installation en un clic avec Stylus.
+        pour personnaliser différents sites.
+        Installation simple avec Stylus.
     </p>
 
 </section>
@@ -582,13 +617,18 @@
     <div class="toolbar">
 
         <div class="toolbar-title">
-            <h2>Thèmes</h2>
+
+            <h2>
+                Thèmes
+            </h2>
 
             <p>
                 <span id="theme-count">0</span>
                 thème(s) disponible(s)
             </p>
+
         </div>
+
 
         <input
             id="search"
@@ -600,170 +640,21 @@
     </div>
 
 
-    <div class="themes" id="themes">
+    <!--
+        Les thèmes seront automatiquement
+        générés ici par JavaScript.
+    -->
+
+    <div
+        class="themes"
+        id="themes"
+    ></div>
 
 
-        <!-- ===================================
-             DISCORD STATUS
-             =================================== -->
-
-        <article
-            class="theme"
-            data-search="discord status dark discordstatus"
-        >
-
-            <div class="theme-top">
-
-                <div class="theme-icon">
-                    D
-                </div>
-
-                <span class="version">
-                    v1.0.0
-                </span>
-
-            </div>
-
-
-            <h3>
-                Discord Status — Dark
-            </h3>
-
-
-            <p class="description">
-                Transforme Discord Status en véritable
-                interface sombre inspirée de Discord.
-                Inclut les composants, incidents,
-                graphiques et menus.
-            </p>
-
-
-            <div class="info">
-
-                <span class="tag">
-                    discordstatus.com
-                </span>
-
-                <span class="tag">
-                    Dark
-                </span>
-
-                <span class="tag">
-                    Stylus
-                </span>
-
-                <div class="date">
-                    Mis à jour le 15 septembre 2026
-                </div>
-
-            </div>
-
-
-            <div class="actions">
-
-                <!--
-                    CHANGE CES 2 URLS
-                -->
-
-                <a
-                    class="button install"
-                    href="https://raw.githubusercontent.com/TON-USER/TON-REPO/main/themes/discord-status-dark.user.css"
-                    target="_blank"
-                >
-                    Installer
-                </a>
-
-                <a
-                    class="button source"
-                    href="https://github.com/TON-USER/TON-REPO/blob/main/themes/discord-status-dark.user.css"
-                    target="_blank"
-                >
-                    Code source
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- ===================================
-             EXEMPLE AUTRE THÈME
-             
-             Duplique <article>...</article>
-             pour ajouter un thème.
-             =================================== -->
-
-        <!--
-
-        <article
-            class="theme"
-            data-search="youtube dark youtube"
-        >
-
-            <div class="theme-top">
-
-                <div class="theme-icon">
-                    Y
-                </div>
-
-                <span class="version">
-                    v1.0.0
-                </span>
-
-            </div>
-
-            <h3>
-                YouTube Dark
-            </h3>
-
-            <p class="description">
-                Description de ton thème.
-            </p>
-
-            <div class="info">
-
-                <span class="tag">
-                    youtube.com
-                </span>
-
-                <span class="tag">
-                    Dark
-                </span>
-
-                <div class="date">
-                    Mis à jour le 15 septembre 2026
-                </div>
-
-            </div>
-
-            <div class="actions">
-
-                <a
-                    class="button install"
-                    href="LIEN RAW"
-                >
-                    Installer
-                </a>
-
-                <a
-                    class="button source"
-                    href="LIEN GITHUB"
-                >
-                    Code source
-                </a>
-
-            </div>
-
-        </article>
-
-        -->
-
-
-    </div>
-
-
-    <div class="empty" id="empty">
+    <div
+        class="empty"
+        id="empty"
+    >
         Aucun thème trouvé.
     </div>
 
@@ -777,25 +668,279 @@
 
 <script>
 
+    /* =========================================================
+       =========================================================
+
+                     AJOUTE TES THEMES ICI
+
+       =========================================================
+       ========================================================= */
+
+
+    const themesData = [
+
+        {
+
+            /*
+                ID UNIQUE DU THEME
+
+                Cet ID donne également l'URL :
+
+                #discordstatus
+
+                donc :
+
+                https://11ethann11.github.io/stylus/#discordstatus
+            */
+
+            id: "discordstatus",
+
+
+            /*
+                Nom affiché
+            */
+
+            name: "Discord Status — Dark",
+
+
+            /*
+                Lettre / petit logo affiché
+            */
+
+            icon: "D",
+
+
+            /*
+                Version du thème
+            */
+
+            version: "1.0.0",
+
+
+            /*
+                Description
+            */
+
+            description:
+                "Transforme Discord Status en véritable interface sombre inspirée de Discord. Inclut les composants, incidents, graphiques et menus.",
+
+
+            /*
+                Tags
+            */
+
+            tags: [
+                "discordstatus.com",
+                "Dark",
+                "Stylus"
+            ],
+
+
+            /*
+                Date affichée
+            */
+
+            updated:
+                "15 septembre 2026",
+
+
+            /*
+                Lien RAW du fichier .user.css
+            */
+
+            install:
+                "https://raw.githubusercontent.com/11ethann11/stylus/main/themes/discord-status-dark.user.css",
+
+
+            /*
+                Lien vers le code GitHub
+            */
+
+            source:
+                "https://github.com/11ethann11/stylus/blob/main/themes/discord-status-dark.user.css"
+
+        }
+
+
+        /*
+            AJOUTE LES AUTRES THEMES
+            EN DESSOUS.
+
+            IMPORTANT :
+
+            Il faut mettre une VIRGULE après
+            le thème précédent.
+
+            Exemple :
+
+            },
+
+            {
+                id: "youtube",
+                ...
+            }
+
+        */
+
+    ];
+
+
+
+    /* =========================================================
+       NE MODIFIE PAS OBLIGATOIREMENT CE QUI SUIT
+       ========================================================= */
+
+
+    const themesContainer =
+        document.getElementById("themes");
+
+
     const search =
         document.getElementById("search");
 
-    const themes =
-        [...document.querySelectorAll(".theme")];
 
     const count =
         document.getElementById("theme-count");
+
 
     const empty =
         document.getElementById("empty");
 
 
-    /* COMPTEUR */
 
-    count.textContent = themes.length;
+    /* =========================================================
+       GÉNÉRATION DES CARTES
+       ========================================================= */
 
 
-    /* RECHERCHE */
+    function createThemes() {
+
+        themesContainer.innerHTML = "";
+
+
+        themesData.forEach(theme => {
+
+
+            const article =
+                document.createElement("article");
+
+
+            article.className = "theme";
+
+            article.id = theme.id;
+
+
+            article.dataset.search = [
+
+                theme.id,
+
+                theme.name,
+
+                theme.description,
+
+                ...theme.tags
+
+            ].join(" ").toLowerCase();
+
+
+
+            const tagsHTML =
+                theme.tags
+                    .map(tag => {
+
+                        return `
+                            <span class="tag">
+                                ${tag}
+                            </span>
+                        `;
+
+                    })
+                    .join("");
+
+
+
+            article.innerHTML = `
+
+                <div class="theme-top">
+
+                    <div class="theme-icon">
+                        ${theme.icon}
+                    </div>
+
+                    <span class="version">
+                        v${theme.version}
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    ${theme.name}
+                </h3>
+
+
+                <p class="description">
+                    ${theme.description}
+                </p>
+
+
+                <div class="info">
+
+                    ${tagsHTML}
+
+                    <div class="date">
+                        Mis à jour le ${theme.updated}
+                    </div>
+
+                </div>
+
+
+                <div class="actions">
+
+                    <a
+                        class="button install"
+                        href="${theme.install}"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Installer
+                    </a>
+
+
+                    <a
+                        class="button source"
+                        href="${theme.source}"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Code source
+                    </a>
+
+                </div>
+
+            `;
+
+
+            themesContainer.appendChild(article);
+
+        });
+
+
+        count.textContent =
+            themesData.length;
+
+    }
+
+
+
+    createThemes();
+
+
+
+    /* =========================================================
+       RECHERCHE
+       ========================================================= */
+
 
     search.addEventListener("input", () => {
 
@@ -804,24 +949,21 @@
                 .toLowerCase()
                 .trim();
 
+
+        const cards =
+            document.querySelectorAll(".theme");
+
+
         let visible = 0;
 
 
-        themes.forEach(theme => {
-
-            const text =
-                (
-                    theme.dataset.search +
-                    " " +
-                    theme.innerText
-                ).toLowerCase();
-
+        cards.forEach(card => {
 
             const match =
-                text.includes(query);
+                card.dataset.search.includes(query);
 
 
-            theme.style.display =
+            card.style.display =
                 match
                     ? "flex"
                     : "none";
@@ -841,7 +983,86 @@
 
     });
 
+
+
+    /* =========================================================
+       OUVERTURE DIRECTE VIA #ID
+       ========================================================= */
+
+
+    function openThemeFromURL() {
+
+        const hash =
+            window.location.hash;
+
+
+        if (!hash) {
+            return;
+        }
+
+
+        const id =
+            hash.substring(1);
+
+
+        const theme =
+            document.getElementById(id);
+
+
+        if (!theme) {
+            return;
+        }
+
+
+        /*
+            Si une recherche était active,
+            on la supprime.
+        */
+
+        search.value = "";
+
+
+        document
+            .querySelectorAll(".theme")
+            .forEach(card => {
+
+                card.style.display = "flex";
+
+            });
+
+
+        empty.style.display = "none";
+
+
+        /*
+            Scroll vers le thème
+        */
+
+        setTimeout(() => {
+
+            theme.scrollIntoView({
+
+                behavior: "smooth",
+                block: "center"
+
+            });
+
+        }, 200);
+
+    }
+
+
+
+    openThemeFromURL();
+
+
+    window.addEventListener(
+        "hashchange",
+        openThemeFromURL
+    );
+
 </script>
+
 
 </body>
 </html>
