@@ -1,175 +1,847 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obfuscator App</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethann — Stylus Themes</title>
+    <meta
+        name="description"
+        content="Collection de thèmes Stylus créés par Ethann."
+    >
+
+    <style>
+        :root {
+            --bg: #0d0e10;
+            --bg-2: #121316;
+            --card: #17181c;
+            --card-hover: #1c1e23;
+
+            --border: #27292f;
+            --border-hover: #3b3e47;
+
+            --text: #f2f3f5;
+            --text-2: #b5bac1;
+            --text-3: #7d828c;
+
+            --accent: #5865f2;
+            --accent-hover: #6875f5;
+
+            --green: #23a55a;
+
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% -20%,
+                    rgba(88, 101, 242, 0.13),
+                    transparent 35%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(13, 14, 16, 0.82);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+
+        .nav {
+            max-width: 1150px;
+            height: 70px;
+
+            margin: auto;
+            padding: 0 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--accent);
+            border-radius: 10px;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .github {
+            color: var(--text-2);
+            font-size: 14px;
+
+            transition: .2s;
+        }
+
+        .github:hover {
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+           ========================= */
+
+        .hero {
+            max-width: 900px;
+
+            margin: auto;
+            padding: 110px 24px 80px;
+
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 22px;
+            padding: 7px 12px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,.025);
+
+            color: var(--text-2);
+            font-size: 13px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+
+            background: var(--green);
+            border-radius: 50%;
+
+            box-shadow: 0 0 10px rgba(35,165,90,.6);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+
+        .gradient {
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #aeb4ff
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+
+            color: var(--text-2);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 0 24px 100px;
+        }
+
+
+        /* =========================
+           TOOLBAR
+           ========================= */
+
+        .toolbar {
+            margin-bottom: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .toolbar-title h2 {
+            margin-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .toolbar-title p {
+            color: var(--text-3);
+            font-size: 14px;
+        }
+
+        .search {
+            width: 280px;
+
+            padding: 12px 15px;
+
+            background: var(--bg-2);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            color: white;
+
+            outline: none;
+
+            transition: .2s;
+        }
+
+        .search::placeholder {
+            color: var(--text-3);
+        }
+
+        .search:focus {
+            border-color: var(--accent);
+
+            box-shadow:
+                0 0 0 3px rgba(88,101,242,.12);
+        }
+
+
+        /* =========================
+           GRID
+           ========================= */
+
+        .themes {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fill, minmax(320px, 1fr));
+
+            gap: 18px;
+        }
+
+
+        /* =========================
+           CARD
+           ========================= */
+
+        .theme {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            min-height: 300px;
+            padding: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.025),
+                    transparent
+                ),
+                var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            transition:
+                transform .2s,
+                border-color .2s,
+                background .2s;
+        }
+
+        .theme:hover {
+            transform: translateY(-3px);
+
+            border-color: var(--border-hover);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.04),
+                    transparent
+                ),
+                var(--card-hover);
+        }
+
+        .theme-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .theme-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 13px;
+
+            background: #22242a;
+            border: 1px solid #303239;
+
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .version {
+            padding: 6px 9px;
+
+            background: rgba(88,101,242,.12);
+            color: #aeb4ff;
+
+            border: 1px solid rgba(88,101,242,.22);
+            border-radius: 7px;
+
+            font-size: 12px;
+            font-family: monospace;
+        }
+
+        .theme h3 {
+            margin-bottom: 8px;
+
+            font-size: 19px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+
+            color: var(--text-2);
+
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .info {
+            margin-top: auto;
+            margin-bottom: 18px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 5px 8px;
+
+            background: #202126;
+
+            border: 1px solid #2d2f35;
+            border-radius: 6px;
+
+            color: var(--text-2);
+
+            font-size: 11px;
+        }
+
+        .date {
+            width: 100%;
+            margin-top: 5px;
+
+            color: var(--text-3);
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           BUTTONS
+           ========================= */
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+
+        .button {
+            min-height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 10px 12px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .2s;
+        }
+
+        .install {
+            background: var(--accent);
+            color: white;
+        }
+
+        .install:hover {
+            background: var(--accent-hover);
+        }
+
+        .source {
+            background: #24262b;
+
+            border: 1px solid #303239;
+
+            color: var(--text-2);
+        }
+
+        .source:hover {
+            background: #2c2e34;
+            color: white;
+        }
+
+
+        /* =========================
+           EMPTY SEARCH
+           ========================= */
+
+        .empty {
+            display: none;
+
+            padding: 60px 20px;
+
+            border: 1px dashed var(--border);
+            border-radius: var(--radius);
+
+            text-align: center;
+
+            color: var(--text-3);
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            padding: 35px 20px;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--text-3);
+            text-align: center;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 650px) {
+
+            .nav {
+                padding: 0 17px;
+            }
+
+            .hero {
+                padding:
+                    80px 18px
+                    60px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            main {
+                padding:
+                    0 17px
+                    70px;
+            }
+
+            .toolbar {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+            .themes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="app">
-    <header>
-      <img src="assets/icon.png" alt="Logo" class="logo">
-      <h1>Obfuscator App</h1>
-    </header>
-    
-    <div class="tabs">
-      <button class="tab active" data-tab="js">JavaScript</button>
-      <button class="tab" data-tab="html">HTML</button>
-      <button class="tab" data-tab="json">JSON</button>
+
+<header>
+    <div class="nav">
+
+        <a href="#" class="brand">
+            <div class="brand-icon">S</div>
+            <span>Stylus Themes</span>
+        </a>
+
+        <!-- CHANGE TON LIEN GITHUB -->
+        <a
+            class="github"
+            href="https://github.com/TON-USER"
+            target="_blank"
+        >
+            GitHub ↗
+        </a>
+
     </div>
-    
-    <div class="main">
-      <div class="sidebar">
-        <div class="panel">
-          <h2>Entrée</h2>
-          <div class="field">
-            <label>Fichiers / Dossier</label>
-            <div class="input-group">
-              <input type="text" id="inputPath" placeholder="Sélectionner des fichiers ou un dossier..." readonly>
-              <button id="selectInputBtn">Parcourir</button>
-            </div>
-          </div>
-          
-          <div class="field">
-            <label>Sortie</label>
-            <div class="input-group">
-              <input type="text" id="outputPath" placeholder="Dossier de sortie..." readonly>
-              <button id="selectOutputBtn">Parcourir</button>
-            </div>
-          </div>
-          
-          <div class="field">
-            <label>Ignorer (séparés par des virgules)</label>
-            <textarea id="ignorePatterns" rows="3" placeholder="node_modules, dist, build...">node_modules</textarea>
-          </div>
-        </div>
-        
-        <div class="panel">
-          <h2>Options JavaScript</h2>
-          <div id="jsOptions" class="options-section">
-            <div class="options-grid">
-              <label class="checkbox">
-                <input type="checkbox" id="compact" checked>
-                <span>Compact</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="stringArray" checked>
-                <span>String Array</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="controlFlowFlattening">
-                <span>Control Flow Flattening</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="deadCodeInjection">
-                <span>Dead Code Injection</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="debugProtection">
-                <span>Debug Protection</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="disableConsoleOutput">
-                <span>Disable Console Output</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="selfDefending">
-                <span>Self Defending</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="simplify">
-                <span>Simplify</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="splitStrings">
-                <span>Split Strings</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="unicodeEscapeSequence">
-                <span>Unicode Escape</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="renameProperties">
-                <span>Rename Properties (unsafe)</span>
-              </label>
-            </div>
-            
-            <div class="field">
-              <label>Options Preset</label>
-              <select id="optionsPreset">
-                <option value="default">Default</option>
-                <option value="low-obfuscation">Low Obfuscation</option>
-                <option value="medium-obfuscation">Medium Obfuscation</option>
-                <option value="high-obfuscation">High Obfuscation</option>
-              </select>
-            </div>
-          </div>
-          
-          <div id="htmlOptions" class="options-section" style="display: none;">
-            <div class="options-grid">
-              <label class="checkbox">
-                <input type="checkbox" id="htmlObfuscateInlineJs" checked>
-                <span>Obfusquer le JS inline</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="htmlEncodeEntities">
-                <span>Encoder les entités HTML</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="htmlMinify" checked>
-                <span>Minifier</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="htmlRemoveComments" checked>
-                <span>Supprimer les commentaires</span>
-              </label>
-            </div>
-          </div>
-          
-          <div id="jsonOptions" class="options-section" style="display: none;">
-            <div class="options-grid">
-              <label class="checkbox">
-                <input type="checkbox" id="jsonMinify" checked>
-                <span>Minifier</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="jsonObfuscateKeys">
-                <span>Obscurcir les clés</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="jsonObfuscateValues">
-                <span>Obscurcir les valeurs</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="jsonCompress">
-                <span>Compresser (base64)</span>
-              </label>
-            </div>
-          </div>
-        </div>
-        
-        <button id="obfuscateBtn" class="obfuscate-btn">Obfusquer</button>
-      </div>
-      
-      <div class="content">
-        <div class="results-panel">
-          <h2>Résultats</h2>
-          <div id="resultsTree" class="results-tree">
-            <p class="empty">Aucun résultat. Lancez une obfuscation.</p>
-          </div>
-        </div>
-        
-        <div class="preview-panel">
-          <h2>Prévisualisation</h2>
-          <div id="preview" class="preview">
-            <p class="empty">Sélectionnez un fichier pour voir le résultat.</p>
-          </div>
-        </div>
-      </div>
+</header>
+
+
+<section class="hero">
+
+    <div class="badge">
+        <span class="badge-dot"></span>
+        UserStyles pour Stylus
     </div>
-  </div>
-  
-  <script src="renderer.js"></script>
+
+    <h1>
+        Mes
+        <span class="gradient">Stylus Themes</span>
+    </h1>
+
+    <p>
+        Une collection de thèmes et modifications CSS
+        pour personnaliser mes sites préférés.
+        Installation en un clic avec Stylus.
+    </p>
+
+</section>
+
+
+<main>
+
+    <div class="toolbar">
+
+        <div class="toolbar-title">
+            <h2>Thèmes</h2>
+
+            <p>
+                <span id="theme-count">0</span>
+                thème(s) disponible(s)
+            </p>
+        </div>
+
+        <input
+            id="search"
+            class="search"
+            type="search"
+            placeholder="Rechercher un thème..."
+        >
+
+    </div>
+
+
+    <div class="themes" id="themes">
+
+
+        <!-- ===================================
+             DISCORD STATUS
+             =================================== -->
+
+        <article
+            class="theme"
+            data-search="discord status dark discordstatus"
+        >
+
+            <div class="theme-top">
+
+                <div class="theme-icon">
+                    D
+                </div>
+
+                <span class="version">
+                    v1.0.0
+                </span>
+
+            </div>
+
+
+            <h3>
+                Discord Status — Dark
+            </h3>
+
+
+            <p class="description">
+                Transforme Discord Status en véritable
+                interface sombre inspirée de Discord.
+                Inclut les composants, incidents,
+                graphiques et menus.
+            </p>
+
+
+            <div class="info">
+
+                <span class="tag">
+                    discordstatus.com
+                </span>
+
+                <span class="tag">
+                    Dark
+                </span>
+
+                <span class="tag">
+                    Stylus
+                </span>
+
+                <div class="date">
+                    Mis à jour le 15 septembre 2026
+                </div>
+
+            </div>
+
+
+            <div class="actions">
+
+                <!--
+                    CHANGE CES 2 URLS
+                -->
+
+                <a
+                    class="button install"
+                    href="https://raw.githubusercontent.com/TON-USER/TON-REPO/main/themes/discord-status-dark.user.css"
+                    target="_blank"
+                >
+                    Installer
+                </a>
+
+                <a
+                    class="button source"
+                    href="https://github.com/TON-USER/TON-REPO/blob/main/themes/discord-status-dark.user.css"
+                    target="_blank"
+                >
+                    Code source
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ===================================
+             EXEMPLE AUTRE THÈME
+             
+             Duplique <article>...</article>
+             pour ajouter un thème.
+             =================================== -->
+
+        <!--
+
+        <article
+            class="theme"
+            data-search="youtube dark youtube"
+        >
+
+            <div class="theme-top">
+
+                <div class="theme-icon">
+                    Y
+                </div>
+
+                <span class="version">
+                    v1.0.0
+                </span>
+
+            </div>
+
+            <h3>
+                YouTube Dark
+            </h3>
+
+            <p class="description">
+                Description de ton thème.
+            </p>
+
+            <div class="info">
+
+                <span class="tag">
+                    youtube.com
+                </span>
+
+                <span class="tag">
+                    Dark
+                </span>
+
+                <div class="date">
+                    Mis à jour le 15 septembre 2026
+                </div>
+
+            </div>
+
+            <div class="actions">
+
+                <a
+                    class="button install"
+                    href="LIEN RAW"
+                >
+                    Installer
+                </a>
+
+                <a
+                    class="button source"
+                    href="LIEN GITHUB"
+                >
+                    Code source
+                </a>
+
+            </div>
+
+        </article>
+
+        -->
+
+
+    </div>
+
+
+    <div class="empty" id="empty">
+        Aucun thème trouvé.
+    </div>
+
+</main>
+
+
+<footer>
+    Créé par Ethann · UserStyles pour Stylus
+</footer>
+
+
+<script>
+
+    const search =
+        document.getElementById("search");
+
+    const themes =
+        [...document.querySelectorAll(".theme")];
+
+    const count =
+        document.getElementById("theme-count");
+
+    const empty =
+        document.getElementById("empty");
+
+
+    /* COMPTEUR */
+
+    count.textContent = themes.length;
+
+
+    /* RECHERCHE */
+
+    search.addEventListener("input", () => {
+
+        const query =
+            search.value
+                .toLowerCase()
+                .trim();
+
+        let visible = 0;
+
+
+        themes.forEach(theme => {
+
+            const text =
+                (
+                    theme.dataset.search +
+                    " " +
+                    theme.innerText
+                ).toLowerCase();
+
+
+            const match =
+                text.includes(query);
+
+
+            theme.style.display =
+                match
+                    ? "flex"
+                    : "none";
+
+
+            if (match) {
+                visible++;
+            }
+
+        });
+
+
+        empty.style.display =
+            visible === 0
+                ? "block"
+                : "none";
+
+    });
+
+</script>
+
 </body>
 </html>
