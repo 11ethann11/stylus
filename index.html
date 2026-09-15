@@ -367,16 +367,23 @@ main {
     width: 52px;
     height: 52px;
 
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background: #22242a;
 
     border: 1px solid #303239;
     border-radius: 13px;
 
-    font-size: 23px;
-    font-weight: 700;
+    overflow: hidden;
+}
+
+.theme-icon img {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
 }
 
 .version {
@@ -1097,75 +1104,21 @@ footer {
 const themesData = [
 
     {
-
-        /*
-            IMPORTANT :
-
-            id = ce qu'il y aura après le #
-
-            discordstatus donne :
-
-            https://11ethann11.github.io/stylus/#discordstatus
-        */
-
         id: "discordstatus",
-
-
-        name:
-            "Discord Status — Dark",
-
-
-        icon:
-            "D",
-
-
-        version:
-            "1.0.0",
-
-
-        description:
-            "Transforme Discord Status en véritable interface sombre inspirée de Discord. Le thème modifie les composants, incidents, graphiques, menus et différents éléments de Statuspage.",
-
-
+        name:"Discord Status — Dark",
+        icon:"discord.webp",
+        version:"1.0.0",
+        description:"Transforme Discord Status en véritable interface sombre.",
         tags: [
             "discordstatus.com",
             "Dark",
             "Stylus"
         ],
-
-
-        updated:
-            "15 septembre 2026",
-
-
-        /*
-            IMAGE D'APERÇU
-
-            Mets ton image dans :
-
-            /images/discord-status-dark.webp
-
-            Tu peux aussi utiliser .png ou .jpg.
-        */
-
-        image:
-            "images/discord-status-dark.webp",
-
-
-        /*
-            INSTALLATION
-        */
-
-        install:
-            "https://raw.githubusercontent.com/11ethann11/stylus/main/themes/discord-status-dark.user.css",
-
-
-        /*
-            CODE SOURCE
-        */
-
-        source:
-            "https://github.com/11ethann11/stylus/blob/main/themes/discord-status-dark.user.css"
+        updated:"15 septembre 2026",
+        image:"images/discord-status-dark.webp",
+        
+        install:"https://raw.githubusercontent.com/11ethann11/stylus/main/themes/discord-status-dark.user.css",
+        source:"https://github.com/11ethann11/stylus/blob/main/themes/discord-status-dark.user.css"
 
     }
 
@@ -1310,7 +1263,7 @@ function createThemes() {
             <div class="theme-top">
 
                 <div class="theme-icon">
-                    ${theme.icon}
+                    <img src="${theme.icon}" alt="">
                 </div>
 
 
