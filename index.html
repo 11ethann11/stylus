@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obfuscator App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <img src="assets/icon.png" alt="Logo" class="logo">
+      <h1>Obfuscator App</h1>
+    </header>
+    
+    <div class="tabs">
+      <button class="tab active" data-tab="js">JavaScript</button>
+      <button class="tab" data-tab="html">HTML</button>
+      <button class="tab" data-tab="json">JSON</button>
+    </div>
+    
+    <div class="main">
+      <div class="sidebar">
+        <div class="panel">
+          <h2>Entrée</h2>
+          <div class="field">
+            <label>Fichiers / Dossier</label>
+            <div class="input-group">
+              <input type="text" id="inputPath" placeholder="Sélectionner des fichiers ou un dossier..." readonly>
+              <button id="selectInputBtn">Parcourir</button>
+            </div>
+          </div>
+          
+          <div class="field">
+            <label>Sortie</label>
+            <div class="input-group">
+              <input type="text" id="outputPath" placeholder="Dossier de sortie..." readonly>
+              <button id="selectOutputBtn">Parcourir</button>
+            </div>
+          </div>
+          
+          <div class="field">
+            <label>Ignorer (séparés par des virgules)</label>
+            <textarea id="ignorePatterns" rows="3" placeholder="node_modules, dist, build...">node_modules</textarea>
+          </div>
+        </div>
+        
+        <div class="panel">
+          <h2>Options JavaScript</h2>
+          <div id="jsOptions" class="options-section">
+            <div class="options-grid">
+              <label class="checkbox">
+                <input type="checkbox" id="compact" checked>
+                <span>Compact</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="stringArray" checked>
+                <span>String Array</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="controlFlowFlattening">
+                <span>Control Flow Flattening</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="deadCodeInjection">
+                <span>Dead Code Injection</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="debugProtection">
+                <span>Debug Protection</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="disableConsoleOutput">
+                <span>Disable Console Output</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="selfDefending">
+                <span>Self Defending</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="simplify">
+                <span>Simplify</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="splitStrings">
+                <span>Split Strings</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="unicodeEscapeSequence">
+                <span>Unicode Escape</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="renameProperties">
+                <span>Rename Properties (unsafe)</span>
+              </label>
+            </div>
+            
+            <div class="field">
+              <label>Options Preset</label>
+              <select id="optionsPreset">
+                <option value="default">Default</option>
+                <option value="low-obfuscation">Low Obfuscation</option>
+                <option value="medium-obfuscation">Medium Obfuscation</option>
+                <option value="high-obfuscation">High Obfuscation</option>
+              </select>
+            </div>
+          </div>
+          
+          <div id="htmlOptions" class="options-section" style="display: none;">
+            <div class="options-grid">
+              <label class="checkbox">
+                <input type="checkbox" id="htmlObfuscateInlineJs" checked>
+                <span>Obfusquer le JS inline</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="htmlEncodeEntities">
+                <span>Encoder les entités HTML</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="htmlMinify" checked>
+                <span>Minifier</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="htmlRemoveComments" checked>
+                <span>Supprimer les commentaires</span>
+              </label>
+            </div>
+          </div>
+          
+          <div id="jsonOptions" class="options-section" style="display: none;">
+            <div class="options-grid">
+              <label class="checkbox">
+                <input type="checkbox" id="jsonMinify" checked>
+                <span>Minifier</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="jsonObfuscateKeys">
+                <span>Obscurcir les clés</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="jsonObfuscateValues">
+                <span>Obscurcir les valeurs</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="jsonCompress">
+                <span>Compresser (base64)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <button id="obfuscateBtn" class="obfuscate-btn">Obfusquer</button>
+      </div>
+      
+      <div class="content">
+        <div class="results-panel">
+          <h2>Résultats</h2>
+          <div id="resultsTree" class="results-tree">
+            <p class="empty">Aucun résultat. Lancez une obfuscation.</p>
+          </div>
+        </div>
+        
+        <div class="preview-panel">
+          <h2>Prévisualisation</h2>
+          <div id="preview" class="preview">
+            <p class="empty">Sélectionnez un fichier pour voir le résultat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
